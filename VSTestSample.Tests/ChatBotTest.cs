@@ -6,7 +6,12 @@ namespace VSTestSample.Tests
     [TestClass]
     public class ChatBotTest
     {
-        public TestContext TestContext { get; set; }
+        public ChatBotTest(TestContext testContext)
+        {
+            TestContext = testContext;
+        }
+
+        private TestContext TestContext { get; set; }
         
         [TestMethod]
         public void GreetShouldContainName()
