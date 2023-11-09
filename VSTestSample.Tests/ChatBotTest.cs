@@ -6,13 +6,8 @@ namespace VSTestSample.Tests
     [TestClass]
     public class ChatBotTest
     {
-        public ChatBotTest(TestContext testContext)
-        {
-            TestContext = testContext;
-        }
+        public TestContext? TestContext { get; set; }
 
-        private TestContext TestContext { get; set; }
-        
         [TestMethod]
         public void GreetShouldContainName()
         {
@@ -29,7 +24,7 @@ namespace VSTestSample.Tests
             // Add attachment
             const string attachmentFilename = "MyTestResult.txt";
             File.WriteAllText(attachmentFilename, $"The result of the operation is '{actual}'");
-            TestContext.AddResultFile(attachmentFilename);
+            TestContext?.AddResultFile(attachmentFilename);
         }
         
         [TestCategory("Questions")]
@@ -49,7 +44,7 @@ namespace VSTestSample.Tests
             // Add attachment
             const string attachmentFilename = "MyTestResult.txt";
             File.WriteAllText(attachmentFilename, $"The actual question is '{question}'");
-            TestContext.AddResultFile(attachmentFilename);
+            TestContext?.AddResultFile(attachmentFilename);
         }
     }
 }
