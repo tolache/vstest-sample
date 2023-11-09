@@ -9,7 +9,7 @@ namespace VSTestSample.Tests
         public TestContext? TestContext { get; set; }
 
         [TestMethod]
-        public void GreetShouldContainName()
+        public void GreetShouldAddressCorrectName()
         {
             // Arrange
             string name = "World";
